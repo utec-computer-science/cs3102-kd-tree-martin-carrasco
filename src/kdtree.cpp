@@ -12,7 +12,7 @@
 using namespace std;
 
 template<typename Target, typename... Ts>
-using areT = std::conjunction<std::is_same<Ts,Target>...>;
+using areT = conjunction<std::is_same<Ts,Target>...>;
 
 template <class Trait>
 template <class ... Args>

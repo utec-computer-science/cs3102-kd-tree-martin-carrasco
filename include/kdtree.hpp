@@ -7,7 +7,7 @@
 
 template <class TreeTrait>
 struct Node {
-	typedef typename TreeTrait::ObjType ObjType;
+	using ObjType = typename TreeTrait::ObjType;
 
 	std::shared_ptr<Node> left;
 	std::shared_ptr<Node> right;
@@ -25,9 +25,9 @@ struct Node {
 template <class Trait>
 class KDTree {
 	public:
-		typedef ::Node< KDTree<Trait> > Node;
-		typedef typename std::shared_ptr<Node> NodePtr;
-		typedef typename Trait::ObjType ObjType;
+		using Node =::Node< KDTree<Trait> >;
+		using NodePtr = typename std::shared_ptr<Node>;
+		using ObjType = typename Trait::ObjType;
 		static const unsigned int Size = Trait::Size;
 
 	private:
@@ -41,8 +41,8 @@ class KDTree {
 
 class Int2DTree {
 	public:
-		typedef int ObjType;
-		static const unsigned int Size = 2;
+		using ObjType = int;
+		constexpr static unsigned int Size = 2;
 };
 
 
